@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title', 255);
             $table->string('email', 255)->nullable();
 
-            $table->foreignId('status_id')
+            $table->foreignId('question_status_id')
                 ->constrained()
                 ->onDelete('restrict');
 

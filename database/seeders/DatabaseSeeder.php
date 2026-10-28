@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call([
-            QuestionTypeSeeder::class
+            QuestionTypeSeeder::class,
+            QuestionStatusSeeder::class,
+            SurveySeeder::class,
         ]);
     }
 }

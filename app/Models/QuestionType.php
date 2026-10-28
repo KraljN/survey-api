@@ -11,4 +11,8 @@ class QuestionType extends Model
 {
     /** @use HasFactory<\Database\Factories\QuestionTypeFactory> */
     use HasFactory;
+
+    public function questions(){
+        return $this->hasMany(Question::class);
+    }
 }

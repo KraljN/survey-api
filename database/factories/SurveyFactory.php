@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\QuestionStatus;
 use App\Models\Status;
 use App\Models\Survey;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -18,13 +19,13 @@ class SurveyFactory extends Factory
      */
     public function definition(): array
     {
-        static $statusIds;
-        $statusIds ??= Status::all()->pluck('id');
+        static $questionStatusIds;
+        $questionStatusIds ??= QuestionStatus::all()->pluck('id');
 
         return [
             'title' => fake()->sentence(),
             'email' => fake()->safeEmail(),
-            'status_id' => fake()->randomElement($statusIds)
+            'question_status_id' => fake()->randomElement($questionStatusIds)
         ];
     }
 }
