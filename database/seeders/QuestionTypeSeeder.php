@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\QuestionType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use \App\Enums\QuestionType as QuestionTypeEnum;
 class QuestionTypeSeeder extends Seeder
 {
     /**
@@ -14,10 +14,10 @@ class QuestionTypeSeeder extends Seeder
     public function run(): void
     {
         QuestionType::insert([
-            ['name' => 'text'],
-            ['name' => 'single_choice'],
-            ['name' => 'multiple_choice'],
-            ['name' => 'rating'],
+            ['name' => QuestionTypeEnum::TEXT],
+            ['name' => QuestionTypeEnum::SINGLE_CHOICE],
+            ['name' => QuestionTypeEnum::MULTIPLE_CHOICE],
+            ['name' => QuestionTypeEnum::RATING],
         ]);
     }
 }
